@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Nuevo candidato</title>
+</head>
+
+<body>
+
+<h1>Nuevo candidato</h1>
+
+<form action="/candidatos" method="POST">
+
+    <label>CI:</label>
+    <input
+        type="text"
+        name="ci"
+        maxlength="12"
+        required
+    >
+
+    <br><br>
+
+    <label>Nombres:</label>
+    <input
+        type="text"
+        name="nombres"
+        maxlength="60"
+        required
+    >
+
+    <br><br>
+
+    <label>Primer apellido:</label>
+    <input
+        type="text"
+        name="apellido1"
+        maxlength="30"
+        required
+    >
+
+    <br><br>
+
+    <label>Segundo apellido:</label>
+    <input
+        type="text"
+        name="apellido2"
+        maxlength="40"
+    >
+
+    <br><br>
+
+    <label>Cargo:</label>
+
+    <select name="cargo_id" required>
+
+        <% cargos.forEach(cargo => { %>
+
+            <option value="<%= cargo.id %>">
+                <%= cargo.nombre %>
+            </option>
+
+        <% }) %>
+
+    </select>
+
+    <br><br>
+
+    <label>Lugar:</label>
+
+    <select name="lugar_id" required>
+
+        <% lugares.forEach(lugar => { %>
+
+            <option value="<%= lugar.id %>">
+                <%= lugar.nombre %>
+            </option>
+
+        <% }) %>
+
+    </select>
+
+    <br><br>
+
+    <button type="submit">
+        Guardar
+    </button>
+
+</form>
+
+<br>
+
+<a href="/candidatos">
+    Volver
+</a>
+
+</body>
+
+</html>
