@@ -1,0 +1,12 @@
+
+.tablero {
+    display: grid;
+    grid-template-columns: repeat(3, 40px);
+    gap: 6px;
+    margin: 10px auto;
+}
+
+.casilla {
+    width: 30px;
+    height: 30px;
+}

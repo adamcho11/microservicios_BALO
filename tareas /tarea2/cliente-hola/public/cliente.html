@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>WebSocket Tres en Raya</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+      <h2>Tres en raya (tu simbolo es X)</h2>
+
+      <div id="tablero" class="tablero">
+        <button class="casilla" data-posicion="0"></button>
+        <button class="casilla" data-posicion="1"></button>
+        <button class="casilla" data-posicion="2"></button>
+        <button class="casilla" data-posicion="3"></button>
+        <button class="casilla" data-posicion="4"></button>
+        <button class="casilla" data-posicion="5"></button>
+        <button class="casilla" data-posicion="6"></button>
+        <button class="casilla" data-posicion="7"></button>
+        <button class="casilla" data-posicion="8"></button>
+      </div>
+
+      <p id="estado">Conectando...</p>
+    </main>
+
+    <script>
+      const socket = new WebSocket("ws://localhost:8080");
+      const botones = document.querySelectorAll(".casilla");
+      const estado = document.getElementById("estado");
+
+      let tablero = Array(9).fill(null);
+      let turno = false;
+      let fin = false;
+
+      function dibujar() {
+        for (let i = 0; i < 9; i = i + 1) {
+          botones[i].textContent = tablero[i] === null ? "" : tablero[i];
+          botones[i].disabled = tablero[i] !== null || !turno || fin;
+        }
+      }
+
+      for (let i = 0; i < 9; i = i + 1) {
+        botones[i].addEventListener("click", () => {
+          if (fin || !turno || tablero[i] !== null || socket.readyState !== 1) {
+            return;
+          }
+          turno = false;
+          estado.textContent = "El servidor esta jugando...";
+          socket.send(JSON.stringify({ posicion: i }));
+          dibujar();
+        });
+      }
+
+      socket.onopen = () => (estado.textContent = "Conectado. Espera tu turno.");
+      socket.onerror = () => (estado.textContent = "No se pudo conectar.");
+      socket.onclose = () => (estado.textContent = "Conexion cerrada.");
+
+      socket.onmessage = (event) => {
+        try {
+          const datos = JSON.parse(event.data);
+          if (Array.isArray(datos.tablero)) tablero = datos.tablero;
+
+          if (datos.error) {
+            estado.textContent = datos.error;
+          } else if (datos.resultado === "ganaste") {
+            estado.textContent = "Ganaste.";
+          } else if (datos.resultado === "perdiste") {
+            estado.textContent = "Perdiste.";
+          } else if (datos.resultado === "empate") {
+            estado.textContent = "Empate.";
+          } else {
+            estado.textContent = datos.mensaje || "Tu turno.";
+          }
+
+          turno = datos.puedeJugar === true;
+          fin = datos.resultado !== "continua";
+          dibujar();
+        } catch {
+          estado.textContent = "Respuesta invalida del servidor.";
+        }
+      };
+    </script>
+  </body>
+</html>
