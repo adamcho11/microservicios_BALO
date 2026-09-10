@@ -1,0 +1,17 @@
+syntax = "proto3";
+package estudiantes;
+
+message Estudiante {
+  string ci = 1;
+  string nombres = 2;
+  string apellidos = 3;
+  string carrera = 4;
+  string correo = 5;
+}
+
+message EstudianteRequest { string ci = 1; }
+message EstudianteResponse { Estudiante estudiante = 1; }
+
+service EstudianteService {
+  rpc ObtenerEstudiante (EstudianteRequest) returns (EstudianteResponse);
+}
