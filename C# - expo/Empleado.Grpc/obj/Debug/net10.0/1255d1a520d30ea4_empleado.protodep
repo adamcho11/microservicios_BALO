@@ -1,0 +1,2 @@
+obj/Debug/net10.0/Protos/Empleado.cs \
+obj/Debug/net10.0/Protos/EmpleadoGrpc.cs: Protos/empleado.proto

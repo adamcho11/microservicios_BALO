@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option csharp_namespace = "Empleado.Grpc";
+
+package empleado;
+
+// Definicion del servicio gRPC
+service EmpleadoService {
+
+  rpc ObtenerEmpleado (EmpleadoId) returns (Empleado);
+  rpc ListarEmpleados (Empty) returns (EmpleadoList);
+  
+}
+
+message Empty {}
+
+message EmpleadoId {
+  int32 id = 1;
+}
+
+message Empleado {
+  int32 id = 1;
+  string nombre = 2;
+  string puesto = 3;
+  double salario = 4;
+}
+
+message EmpleadoList {
+  repeated Empleado empleados = 1;
+}

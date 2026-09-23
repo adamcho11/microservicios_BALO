@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "nlEJ2/+lJ20=",
+  "success": true,
+  "projectFilePath": "/Users/adamleanos/Documents/2-2026/microservicios_BALO/C# - expo/Empleado.Grpc/Empleado.Grpc.csproj",
+  "expectedPackageFiles": [
+    "/Users/adamleanos/.nuget/packages/google.protobuf/3.35.1/google.protobuf.3.35.1.nupkg.sha512",
+    "/Users/adamleanos/.nuget/packages/grpc.aspnetcore/2.49.0/grpc.aspnetcore.2.49.0.nupkg.sha512",
+    "/Users/adamleanos/.nuget/packages/grpc.aspnetcore.server/2.84.0/grpc.aspnetcore.server.2.84.0.nupkg.sha512",
+    "/Users/adamleanos/.nuget/packages/grpc.aspnetcore.server.clientfactory/2.49.0/grpc.aspnetcore.server.clientfactory.2.49.0.nupkg.sha512",
+    "/Users/adamleanos/.nuget/packages/grpc.aspnetcore.server.reflection/2.84.0/grpc.aspnetcore.server.reflection.2.84.0.nupkg.sha512",
+    "/Users/adamleanos/.nuget/packages/grpc.core.api/2.84.0/grpc.core.api.2.84.0.nupkg.sha512",
+    "/Users/adamleanos/.nuget/packages/grpc.net.client/2.49.0/grpc.net.client.2.49.0.nupkg.sha512",
+    "/Users/adamleanos/.nuget/packages/grpc.net.clientfactory/2.49.0/grpc.net.clientfactory.2.49.0.nupkg.sha512",
+    "/Users/adamleanos/.nuget/packages/grpc.net.common/2.84.0/grpc.net.common.2.84.0.nupkg.sha512",
+    "/Users/adamleanos/.nuget/packages/grpc.reflection/2.84.0/grpc.reflection.2.84.0.nupkg.sha512",
+    "/Users/adamleanos/.nuget/packages/grpc.tools/2.49.0/grpc.tools.2.49.0.nupkg.sha512"
+  ],
+  "logs": []
+}
