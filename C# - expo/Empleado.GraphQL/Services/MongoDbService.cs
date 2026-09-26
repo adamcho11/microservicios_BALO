@@ -6,7 +6,8 @@ public class MongoDbService
 
     public MongoDbService()
     {
-        var client = new MongoClient("mongodb://localhost:27017");
+        var mongoUrl = Environment.GetEnvironmentVariable("MONGO_URL") ?? "mongodb://localhost:27017";
+        var client = new MongoClient(mongoUrl);
         var database = client.GetDatabase("empleados_db");
         _collection = database.GetCollection<Empleado>("empleados");
     }

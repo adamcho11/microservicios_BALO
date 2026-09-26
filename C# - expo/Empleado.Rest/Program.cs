@@ -6,7 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var mongoClient = new MongoClient("mongodb://localhost:27017");
+var mongoUrl = Environment.GetEnvironmentVariable("MONGO_URL") ?? "mongodb://localhost:27017";
+var mongoClient = new MongoClient(mongoUrl);
 var database = mongoClient.GetDatabase("empleados_db");
 var collection = database.GetCollection<Empleado>("empleados");
 

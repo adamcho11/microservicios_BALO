@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+// Este archivo define el CONTRATO entre cliente y servidor
+// Es como un "idioma común" que ambos deben entender
+
+service TrabajadorService {
+  // Listar todos los trabajadores (no necesita argumentos)
+  rpc Listar (Vacio) returns (Lista);
+  
+  // Obtener un trabajador por su ID de MongoDB
+  rpc Obtener (Id) returns (Trabajador);
+  
+  // Crear un nuevo trabajador
+  rpc Crear (TrabajadorInput) returns (Trabajador);
+  
+  // Actualizar un trabajador existente
+  rpc Actualizar (TrabajadorActualizar) returns (Trabajador);
+  
+  // Eliminar un trabajador por ID
+  rpc Borrar (Id) returns (Vacio);
+}
+
+// Mensaje vacio: se usa cuando una funcion no necesita datos de entrada
+message Vacio {}
+
+// Mensaje para enviar/recibir un ID
+message Id { 
+  string id = 1;  // El numero 1 es el "tag" del campo en protobuf
+}
+
+// Mensaje que representa un Trabajador completo (lo que devolvemos)
+message Trabajador {
+  string id = 1;           // _id de MongoDB (convertido a string)
+  string nombre = 2;
+  string apellido = 3;
+  string cedula = 4;
+  string cargo = 5;
+  string departamento = 6;
+  string fechaIngreso = 7; // Fecha como string formato ISO (ej: "2025-07-20")
+}
+
+// Mensaje para crear un nuevo trabajador (sin ID, Mongo lo genera)
+message TrabajadorInput {
+  string nombre = 1;
+  string apellido = 2;
+  string cedula = 3;
+  string cargo = 4;
+  string departamento = 5;
+  string fechaIngreso = 6;
+}
+
+// Mensaje para actualizar: necesita ID + datos nuevos
+message TrabajadorActualizar {
+  string id = 1;
+  TrabajadorInput datos = 2;
+}
+
+// Mensaje que contiene una lista de trabajadores
+message Lista {
+  repeated Trabajador items = 1;  // "repeated" = array/lista
+}

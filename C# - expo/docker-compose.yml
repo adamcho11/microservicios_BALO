@@ -1,0 +1,51 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: empleado-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - empleado-net
+
+  rest:
+    build: ./Empleado.Rest
+    container_name: empleado-rest
+    ports:
+      - "${REST_PORT}:8080"
+    environment:
+      - MONGO_URL=${MONGO_URL}
+      - MONGO_DB=${MONGO_DB}
+    depends_on:
+      - mongo
+    networks:
+      - empleado-net
+
+  grpc:
+    build: ./Empleado.Grpc
+    container_name: empleado-grpc
+    ports:
+      - "${GRPC_PORT}:8080"
+    networks:
+      - empleado-net
+
+  graphql:
+    build: ./Empleado.GraphQL
+    container_name: empleado-graphql
+    ports:
+      - "${GRAPHQL_PORT}:8080"
+    environment:
+      - MONGO_URL=${MONGO_URL}
+      - MONGO_DB=${MONGO_DB}
+    depends_on:
+      - mongo
+    networks:
+      - empleado-net
+
+volumes:
+  mongo-data:
+
+networks:
+  empleado-net:
+    driver: bridge
