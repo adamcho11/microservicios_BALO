@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1791402694254" clover="3.2.0">
+  <project timestamp="1791402694254" name="All files">
+    <metrics statements="6" coveredstatements="5" conditionals="11" coveredconditionals="10" methods="1" coveredmethods="1" elements="18" coveredelements="16" complexity="0" loc="6" ncloc="6" packages="1" files="1" classes="1"/>
+    <file name="tarea.js" path="/Users/adamleanos/Documents/2-2026/microservicios_BALO/Laboratorios/practica7-pruebas/src/tarea.js">
+      <metrics statements="6" coveredstatements="5" conditionals="11" coveredconditionals="10" methods="1" coveredmethods="1"/>
+      <line num="2" count="4" type="cond" truecount="4" falsecount="0"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="5" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="6" count="1" type="cond" truecount="3" falsecount="1"/>
+      <line num="7" count="0" type="stmt"/>
+      <line num="9" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
