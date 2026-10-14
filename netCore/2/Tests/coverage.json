@@ -1,0 +1,204 @@
+{
+  "Pedido.Api.dll": {
+    "/Users/adamleanos/Documents/2-2026/microservicios_BALO/netCore/2/Pedido.Api/Program.cs": {
+      "Program": {
+        "System.Void Program::<Main>$(System.String[])": {
+          "Lines": {
+            "3": 1,
+            "5": 1,
+            "6": 2,
+            "8": 1,
+            "11": 1,
+            "12": 1,
+            "13": 1,
+            "14": 1,
+            "15": 1,
+            "16": 1,
+            "17": 1,
+            "18": 1,
+            "19": 1,
+            "20": 1,
+            "21": 2,
+            "23": 1
+          },
+          "Branches": [
+            {
+              "Line": 5,
+              "Offset": 25,
+              "EndOffset": 27,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 5,
+              "Offset": 25,
+              "EndOffset": 33,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "ProductoDto": {
+        "System.Int32 ProductoDto::get_Id()": {
+          "Lines": {
+            "25": 17
+          },
+          "Branches": []
+        }
+      },
+      "CrearPedido": {
+        "System.Int32 CrearPedido::get_ProductoId()": {
+          "Lines": {
+            "26": 7
+          },
+          "Branches": []
+        }
+      },
+      "Pedido": {
+        "System.Int32 Pedido::get_ProductoId()": {
+          "Lines": {
+            "27": 14
+          },
+          "Branches": []
+        }
+      },
+      "Pedidos": {
+        "Pedido Pedidos::Crear(ProductoDto,System.Int32)": {
+          "Lines": {
+            "33": 8,
+            "34": 8,
+            "35": 1,
+            "36": 7,
+            "37": 2,
+            "39": 5,
+            "40": 5
+          },
+          "Branches": [
+            {
+              "Line": 34,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 34,
+              "Offset": 7,
+              "EndOffset": 25,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 7
+            },
+            {
+              "Line": 36,
+              "Offset": 34,
+              "EndOffset": 36,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 36,
+              "Offset": 34,
+              "EndOffset": 52,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 5
+            }
+          ]
+        }
+      },
+      "Program/<>c/<<<Main>$>b__0_1>d": {
+        "System.Void Program/<>c/<<<Main>$>b__0_1>d::MoveNext()": {
+          "Lines": {},
+          "Branches": [
+            {
+              "Line": 13,
+              "Offset": 48,
+              "EndOffset": 50,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 13,
+              "Offset": 48,
+              "EndOffset": 66,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 17,
+              "Offset": 281,
+              "EndOffset": 283,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 17,
+              "Offset": 281,
+              "EndOffset": 295,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "Producto.Api.dll": {
+    "/Users/adamleanos/Documents/2-2026/microservicios_BALO/netCore/2/Producto.Api/Program.cs": {
+      "Program": {
+        "System.Void Program::<Main>$(System.String[])": {
+          "Lines": {
+            "1": 1,
+            "2": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1,
+            "7": 1,
+            "8": 1,
+            "10": 1,
+            "11": 2,
+            "12": 2,
+            "13": 2,
+            "15": 1
+          },
+          "Branches": [
+            {
+              "Line": 11,
+              "Offset": 38,
+              "EndOffset": 40,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 11,
+              "Offset": 38,
+              "EndOffset": 48,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Producto": {
+        "System.Int32 Producto::get_Id()": {
+          "Lines": {
+            "17": 6
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}
